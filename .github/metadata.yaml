@@ -1,0 +1,9 @@
+# .github/metadata.yaml
+description: "The constant value type: a value lifted into a computation that always produces it."
+topics:
+  - primitives
+  - constant
+  - type-safety
+homepage: "https://swift-institute.org"
+readme:
+  family: E
