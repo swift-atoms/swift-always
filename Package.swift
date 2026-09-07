@@ -13,8 +13,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Always", targets: ["Always"]),
-        .library(name: "Always Standard Library Integration", targets: ["Always Standard Library Integration"]),
-        .library(name: "Always Foundation Library Integration", targets: ["Always Foundation Library Integration"]),
+
+        .library(name: "Always Foundation Integration", targets: ["Always Foundation Integration"]),
         .library(name: "Always Test Support", targets: ["Always Test Support"]),
     ],
     dependencies: [],
@@ -25,20 +25,13 @@ let package = Package(
             ],
             path: "Sources/Always"
         ),
+        
         .target(
-            name: "Always Standard Library Integration",
+            name: "Always Foundation Integration",
             dependencies: [
                 .target(name: "Always"),
             ],
-            path: "Sources/Always Standard Library Integration"
-        ),
-        .target(
-            name: "Always Foundation Library Integration",
-            dependencies: [
-                .target(name: "Always"),
-                .target(name: "Always Standard Library Integration"),
-            ],
-            path: "Sources/Always Foundation Library Integration"
+            path: "Sources/Always Foundation Integration"
         ),
         .target(
             name: "Always Test Support",
@@ -52,8 +45,7 @@ let package = Package(
             dependencies: [
                 .target(name: "Always"),
                 .target(name: "Always Test Support"),
-                .target(name: "Always Standard Library Integration"),
-                .target(name: "Always Foundation Library Integration"),
+                .target(name: "Always Foundation Integration"),
             ],
             path: "Tests/Always Tests"
         ),

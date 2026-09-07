@@ -8,4 +8,4 @@ public struct Always<Value> {
     }
 }
 
-extension Always: Sendable where Value: Sendable {}
+extension Always: Swift.Sendable where Value: Swift.Sendable {}
