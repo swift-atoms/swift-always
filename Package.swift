@@ -45,7 +45,6 @@ let package = Package(
             dependencies: [
                 .target(name: "Always"),
                 .target(name: "Always Test Support"),
-                .target(name: "Always Foundation Integration"),
             ],
             path: "Tests/Always Tests"
         ),
@@ -53,7 +52,7 @@ let package = Package(
     swiftLanguageModes: [.v6]
 )
 
-for target in package.targets where ![.system, .binary, .plugin].contains(target.type) {
+for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
     target.swiftSettings = (target.swiftSettings ?? []) + [
         .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),
