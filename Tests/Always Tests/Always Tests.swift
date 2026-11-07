@@ -1,20 +1,24 @@
 import Always
 import Testing
 
-@Suite
-struct `Always preserves its stored value` {
+enum `Always Tests` {}
 
-    @Test
-    func `Always stores its value`() {
-        let always = Always(42)
+extension `Always Tests` {
+    @Suite
+    struct `Always preserves its stored value` {
 
-        #expect(always.value == 42)
-    }
+        @Test
+        func `Always stores its value`() {
+            let always = Always(42)
 
-    @Test
-    func `Always stores a Void value`() {
-        let always = Always(())
+            #expect(always.value == 42)
+        }
 
-        _ = always.value
+        @Test
+        func `Always stores a Void value`() {
+            let always = Always(())
+
+            _ = always.value
+        }
     }
 }
